@@ -22,7 +22,11 @@ export interface Props {
   optional: boolean;
   rightAligned: boolean;
 }
-export const Input = ({ children, ...props }: Props) => {
+export const Input = (props : Props) => {
+  function disabled(props){
+    console.log(props.disabled)
+ return (props.disabled===true?"disabled":"")
+}
   return (
     <div
       style={{
@@ -40,7 +44,8 @@ export const Input = ({ children, ...props }: Props) => {
       <input
         type="text"
         {...props}
-        className={[props.variant, props.size].join(" ")}
+  
+        className={[props.variant, props.size,].join(" ")}
         placeholder={props.placeholder}
       />
       {props.error ? (
@@ -84,12 +89,12 @@ export const Input = ({ children, ...props }: Props) => {
         <></>
       )}
       {props.disabled ? (
-        <div>
+        <div >
           <InfoOutlinedIcon
             style={{ fontSize: "12px", color: "#e0e0e0", paddingLeft: "8px" }}
           />
-          <span className="msg"
-            style={{ color: "#e0e0e0", fontSize: "12px", paddingLeft: "8px" }}
+          <span className={["msg",disabled(props)].join(" ")}
+            style={{ color: "#e0e0e0", fontSize: "12px", paddingLeft: "8px" }} 
           >
             {props.Text}
           </span>

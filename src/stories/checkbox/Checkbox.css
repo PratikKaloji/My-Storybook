@@ -1,0 +1,42 @@
+.input {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  /* border-radius: 5px; */
+  accent-color: #434db8; /* used to change the color of the checkbox*/
+}
+input:focus {
+  outline: none;
+  /* outline: 1px solid #434db8; */
+}
+/* input[type="checkbox"]{
+  box-shadow: inset 0px 2px 3px 0px #e8ece8;
+} */
+
+/* input[type=checkbox]:hover{
+   border-color: #434db8;
+} */
+.label {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: #0f0e0e;
+  padding: 2px;
+  background-color: transparent;
+  position: relative;
+  bottom: 3px;
+}
+.disabled {
+  color: #e0e0e0;
+  /* background-color: red; */
+}
+.disabled:hover {
+  cursor: not-allowed;
+}
+/* 
+input[type="checkbox"]:active {
+  background-color: white;
+  border: 1px solid rgb(77, 25, 221);
+  border-radius: 4px;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.25);
+} */
