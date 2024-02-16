@@ -16,8 +16,9 @@ input {
 }
 input:focus {
   outline: none;
-  /* outline: 1px solid #434db8 ; */
+  /* border: 1px solid #434db8 ; */
 }
+
 
 input::placeholder {
   color: #c4c3c3;
@@ -39,15 +40,17 @@ label span {
   /* margin-left: px; */
   color: #c50303;
 }
-.msg{
-    padding-left: 6px;
-    font-family: "Poppins", sans-serif;
-
+.msg {
+  padding-left: 6px;
+  font-family: "Poppins", sans-serif;
 }
 
 /* CSS for variants*/
 .default {
   border: 0.5px solid #e0e0e0;
+}
+.default:focus{
+  border: 0.5px solid #434db8;
 }
 .success {
   border: 0.5px solid #5ca700;
@@ -57,7 +60,6 @@ label span {
 }
 .input1 {
   border: 0.5px solid #434db8;
-  
 }
 .error {
   border: 0.5px solid #c50303;
@@ -67,8 +69,10 @@ label span {
   border-bottom: 1px solid red;
 }
 .disabled {
-  background-color:#e0e0e0 ;
-  border: none ;
+  /* background-color: #e0e0e0; */
+  border: 0.5px solid #e0e0e0 ;
+  color:#e0e0e0 ;
+  border: none;
 }
 .sm {
   width: 100px;
