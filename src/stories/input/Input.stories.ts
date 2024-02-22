@@ -1,94 +1,91 @@
-  import type { Meta, StoryObj } from "@storybook/react";
-import { Input,  } from "./Input";
-
+import type { Meta, StoryObj } from "@storybook/react";
+import { Input } from "./Input";
 
 const meta: Meta<typeof Input> = {
   component: Input,
   title: "Example/Input",
   argTypes: {},
   tags: ["autodocs"],
-  parameters:{
-    layout:"centered"
-  }
+  parameters: {
+    layout: "centered",
+  },
 };
 export default meta;
 
 type Story = StoryObj<typeof meta>;
-
 
 export const Default: Story = {
   args: {
     placeholder: "enter text",
     label: "Label",
     variant: "default",
-    Text:[],
+    Text: [],
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
-      console.log('Input value changed:', event.target.value);
+      console.log("Input value changed:", event.target.value);
     },
-    name:"",type:""
-
+    name: "",
+    type: "",
   },
 };
 export const Success: Story = {
   args: {
     placeholder: "enter text",
     variant: "success",
-    Text:[],
+    Text: [],
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
-      console.log('Input value changed:', event.target.value);
+      console.log("Input value changed:", event.target.value);
     },
-    name:"",type:"",
-
+    name: "",
+    type: "",
   },
 };
 export const Warning: Story = {
   args: {
     placeholder: "enter text",
     variant: "warning",
-    Text:[],
+    Text: [],
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
-      console.log('Input value changed:', event.target.value);
+      console.log("Input value changed:", event.target.value);
     },
-    name:"",
-    type:"",
-
+    name: "",
+    type: "",
   },
 };
 export const Input1: Story = {
   args: {
     placeholder: "enter text",
     variant: "input1",
-    Text:[],
+    Text: [],
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
-      console.log('Input value changed:', event.target.value);
+      console.log("Input value changed:", event.target.value);
     },
-    name:"",type:""
-
-
+    name: "",
+    type: "",
   },
 };
 export const Error: Story = {
   args: {
     placeholder: "enter text",
     variant: "error",
-    Text:[],
+    Text: [],
+    error: true,
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
-      console.log('Input value changed:', event.target.value);
+      console.log("Input value changed:", event.target.value);
     },
-    name:"",type:""
-
+    name: "",
+    type: "",
   },
 };
 export const Disabled: Story = {
   args: {
     placeholder: "enter text",
     variant: "disabled",
-    disabled:true,
-    Text:[],
+    disabled: true,
+    Text: [],
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
-      console.log('Input value changed:', event.target.value);
+      console.log("Input value changed:", event.target.value);
     },
-    name:"",type:""
-
+    name: "",
+    type: "",
   },
 };

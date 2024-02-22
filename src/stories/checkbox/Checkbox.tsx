@@ -10,10 +10,10 @@ export interface props {
 }
 export const Checkbox = (props: props) => {
     function disabled(props:props){
-        console.log(props.disabled)
+        // console.log(props.disabled)
      return (props.disabled===true?"disabled":null)
     }
-    console.log(props.checked)
+    // console.log(props.checked)
   return (
     <div className={`${disabled(props)}`}>
       <input

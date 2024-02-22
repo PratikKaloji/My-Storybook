@@ -27,9 +27,10 @@ export interface Props {
 }
 export const Input = (props : Props) => {
   function disabled(props){
-    console.log(props.disabled)
+    // console.log(props.disabled)
  return (props.disabled===true?"disabled":"")
 }
+// {console.log(props.error)}
   return (
     <div
       style={{
@@ -44,6 +45,7 @@ export const Input = (props : Props) => {
         {props.label}
         {props.optional ? <span>(Optional)</span> : <></>}
       </label>
+      
       <input
       {...props}
         type={props.type}
@@ -52,6 +54,7 @@ export const Input = (props : Props) => {
         name={props.name}
        
       />
+      
       {props.error ? (
         <div>
           <DangerousOutlinedIcon

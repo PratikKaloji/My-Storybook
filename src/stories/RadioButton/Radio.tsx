@@ -10,10 +10,10 @@ export interface Props {
 }
 export const Radio = (props: Props) => {
   function disabled(props: Props) {
-    console.log(props.disabled);
+    // console.log(props.disabled);
     return props.disabled === true ? "disabledRadio" : null;
   }
-  console.log(props.value)
+  // console.log(props.value)
   return (
     <div className={`${disabled(props)}`} style={{width:"auto",display:"inline"}}> 
       <input
