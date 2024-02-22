@@ -1,0 +1,136 @@
+/* @import "../../color"; */
+/* .storybook-button {
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+}
+.storybook-button--primary {
+  color: white;
+  background-color: #1ea7fd;
+}
+.storybook-button--secondary {
+  color: #333;
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+}
+.storybook-button--small {
+  font-size: 12px;
+  padding: 10px 16px;
+}
+.storybook-button--medium {
+  font-size: 14px;
+  padding: 11px 20px;
+}
+.storybook-button--large {
+  font-size: 16px;
+  padding: 12px 24px;
+} */
+.button {
+  width: auto;
+/* Green */
+  border-radius: 5px;
+  
+  color: white;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+
+  }
+  .primary{
+    color: #434DB8;
+    border:1px solid #434DB8;
+  }
+  .primary:hover{
+    background-color: #434DB8;
+    color: white;
+
+
+  }
+  .primary:active{
+    background-color: #434DB8;
+    color: rgb(255, 255, 255);
+
+  }
+  .primary:disabled{
+    background-color: #434DB8;
+    color: rgb(255, 255, 255);
+    opacity: 0.5;
+
+  }
+  .secondary{
+    color: #808080;
+    border:1px solid #808080;}
+    .secondary:hover{
+      background-color: #808080;
+      color: white;
+      
+
+    }
+    .secondary:active{
+      background-color:#808080;
+      color: white;
+      
+    }
+    .secondary:disabled{
+      background-color: #808080;
+      color: white;
+      opacity: 0.5;
+      
+    }
+  .danger{
+    color: #C50303;
+    border:1px solid #C50303;
+  }
+    .danger:hover{
+      background-color: #C50303;
+      color: white;
+       
+
+    }
+    .danger:active{
+      background-color:#C50303;
+      color: white;
+      
+    }
+    .danger:disabled{
+      background-color: #C50303;
+      color: white;
+      opacity: 0.5;    }
+  .sucess{
+    color: #5CA700;
+    border:1px solid #5CA700;
+  }
+    .sucess:hover{
+      background-color: #5CA700;
+      color: white;
+     
+
+    }
+    .sucess:active{
+      background-color:#5CA700;
+      color: white;
+      
+    }
+    .sucess:disabled{
+      background-color:#5CA700;
+      color: white;
+      opacity: 0.5;
+    }
+  .small {
+    font-size: 12px;
+    padding: 10px 16px;
+  }
+  .medium {
+    font-size: 14px;
+    padding: 11px 20px;
+  }
+  .large {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
