@@ -5,6 +5,9 @@
   /* border-radius: 5px; */
   accent-color: #434db8; /* used to change the color of the checkbox*/
 }
+.input:hover{
+  border-color: red;
+}
 input:focus {
   outline: none;
   /* outline: 1px solid #434db8; */
@@ -16,7 +19,7 @@ input:focus {
 /* input[type=checkbox]:hover{
    border-color: #434db8;
 } */
-.label {
+.checkboxlabel {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-size: 12px;

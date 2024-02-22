@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+  import type { Meta, StoryObj } from "@storybook/react";
 import { Input,  } from "./Input";
 
 
@@ -21,7 +21,11 @@ export const Default: Story = {
     placeholder: "enter text",
     label: "Label",
     variant: "default",
-    Text:[]
+    Text:[],
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
+      console.log('Input value changed:', event.target.value);
+    },
+    name:"",type:""
 
   },
 };
@@ -29,7 +33,11 @@ export const Success: Story = {
   args: {
     placeholder: "enter text",
     variant: "success",
-    Text:[]
+    Text:[],
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
+      console.log('Input value changed:', event.target.value);
+    },
+    name:"",type:"",
 
   },
 };
@@ -37,7 +45,12 @@ export const Warning: Story = {
   args: {
     placeholder: "enter text",
     variant: "warning",
-    Text:[]
+    Text:[],
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
+      console.log('Input value changed:', event.target.value);
+    },
+    name:"",
+    type:"",
 
   },
 };
@@ -45,7 +58,11 @@ export const Input1: Story = {
   args: {
     placeholder: "enter text",
     variant: "input1",
-    Text:[]
+    Text:[],
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
+      console.log('Input value changed:', event.target.value);
+    },
+    name:"",type:""
 
 
   },
@@ -54,7 +71,11 @@ export const Error: Story = {
   args: {
     placeholder: "enter text",
     variant: "error",
-    Text:[]
+    Text:[],
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
+      console.log('Input value changed:', event.target.value);
+    },
+    name:"",type:""
 
   },
 };
@@ -63,7 +84,11 @@ export const Disabled: Story = {
     placeholder: "enter text",
     variant: "disabled",
     disabled:true,
-    Text:[]
+    Text:[],
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
+      console.log('Input value changed:', event.target.value);
+    },
+    name:"",type:""
 
   },
 };

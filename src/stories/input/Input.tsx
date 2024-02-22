@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, ReactNode } from "react";
+import React, { ReactNode } from "react";
 import CheckCircleOutlineRoundedIcon from "@mui/icons-material/CheckCircleOutlineRounded";
 import "./Input.css";
 import DangerousOutlinedIcon from "@mui/icons-material/DangerousOutlined";
@@ -21,6 +21,9 @@ export interface Props {
   warning: boolean;
   optional: boolean;
   rightAligned: boolean;
+  name:string
+  type:string
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 export const Input = (props : Props) => {
   function disabled(props){
@@ -36,17 +39,18 @@ export const Input = (props : Props) => {
         transition: "0.2s",
       }}
     >
-      <label htmlFor="">
+      <label htmlFor="" className="label">
         {props.required ? <span>*</span> : <></>}
         {props.label}
         {props.optional ? <span>(Optional)</span> : <></>}
       </label>
       <input
-        type="text"
-        {...props}
-  
+      {...props}
+        type={props.type}
         className={[props.variant, props.size,].join(" ")}
         placeholder={props.placeholder}
+        name={props.name}
+       
       />
       {props.error ? (
         <div>
