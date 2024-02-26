@@ -4,11 +4,12 @@ import { Input } from "./Input";
 const meta: Meta<typeof Input> = {
   component: Input,
   title: "Example/Input",
-  argTypes: {},
+  argTypes: {variant:{control:{type:"select"}}},
   tags: ["autodocs"],
   parameters: {
     layout: "centered",
   },
+
 };
 export default meta;
 
@@ -32,6 +33,7 @@ export const Success: Story = {
     placeholder: "enter text",
     variant: "success",
     Text: [],
+    success: true,
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
       console.log("Input value changed:", event.target.value);
     },
@@ -43,7 +45,7 @@ export const Warning: Story = {
   args: {
     placeholder: "enter text",
     variant: "warning",
-    Text: [],
+    Text: [],  warning: true,
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
       console.log("Input value changed:", event.target.value);
     },
@@ -76,16 +78,16 @@ export const Error: Story = {
     type: "",
   },
 };
-export const Disabled: Story = {
-  args: {
-    placeholder: "enter text",
-    variant: "disabled",
-    disabled: true,
-    Text: [],
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
-      console.log("Input value changed:", event.target.value);
-    },
-    name: "",
-    type: "",
-  },
-};
+// export const Disabled: Story = {
+//   args: {
+//     placeholder: "enter text",
+//     variant: "disabled",
+//     disabled: true,
+//     Text: [],
+//     onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
+//       console.log("Input value changed:", event.target.value);
+//     },
+//     name: "",
+//     type: "",
+//   },
+// };

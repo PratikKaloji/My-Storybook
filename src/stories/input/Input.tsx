@@ -12,17 +12,19 @@ export interface Props {
   required: boolean;
   /**used for adding custom placeholders to the inputs  */
   placeholder: string;
-  variant: "default" | "input1" | "success" | "warning" | "error" | "disabled";
+  variant: "default" | "input1" | "success" | "warning" | "error" ;
   size: "sm" | "md" | "lg";
   disabled: boolean;
   Text: [];
-  error: boolean;
-  success: boolean;
-  warning: boolean;
+  // error: boolean;
+  // success: boolean;
+  // warning: boolean;
   optional: boolean;
-  rightAligned: boolean;
+  // rightAligned: boolean;
   name:string
   type:string
+  
+
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 export const Input = (props : Props) => {
@@ -31,6 +33,9 @@ export const Input = (props : Props) => {
  return (props.disabled===true?"disabled":"")
 }
 // {console.log(props.error)}
+
+
+const condition= props.variant=="default" ? "default": props.variant=="success" ?"success":props.variant=="error"?"error":props.variant=="warning"?"warning":""
   return (
     <div
       style={{
@@ -49,13 +54,13 @@ export const Input = (props : Props) => {
       <input
       {...props}
         type={props.type}
-        className={[props.variant, props.size,].join(" ")}
+        className={[props.variant, props.size,condition].join(" ")}
         placeholder={props.placeholder}
         name={props.name}
        
       />
       
-      {props.error ? (
+      {condition=="error" ? (
         <div>
           <DangerousOutlinedIcon
             style={{ fontSize: "12px", color: "red", paddingLeft: "8px" }}
@@ -70,7 +75,7 @@ export const Input = (props : Props) => {
       ) : (
         <></>
       )}
-      {props.success ? (
+      {condition=="success" ? (
         <div>
           <CheckCircleOutlineRoundedIcon
             style={{ fontSize: "12px", color: "#5ca700", paddingLeft: "8px" }}
@@ -85,7 +90,7 @@ export const Input = (props : Props) => {
       ) : (
         <></>
       )}
-      {props.warning ? (
+      {condition=="warning" ? (
         <span
           className="msg"
           style={{ color: "#ffc600", fontSize: "12px", paddingLeft: "8px" }}
@@ -95,7 +100,7 @@ export const Input = (props : Props) => {
       ) : (
         <></>
       )}
-      {props.disabled ? (
+      {props.disabled==true ? (
         <div >
           <InfoOutlinedIcon
             style={{ fontSize: "12px", color: "#e0e0e0", paddingLeft: "8px" }}
