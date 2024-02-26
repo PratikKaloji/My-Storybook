@@ -29,7 +29,7 @@ export const Primary: Story = {
   args: {
     type:"primary",
     label: 'Button',
-  
+    disabled:false
   },
 };
 
@@ -37,7 +37,7 @@ export const Secondary: Story = {
   args: {
     type:"secondary",
     label: 'Button',
-  
+    disabled:false
   },
 };
 
@@ -45,15 +45,16 @@ export const Danger: Story = {
   args: {
     type:"danger",
     label: 'Button',
+    disabled:false
 
   },
 };
 
 export const Sucess: Story = {
   args: {
-    type:"sucess",
+    type:"success",
     label: 'Button',
-
+    disabled:false
   },
 };
 

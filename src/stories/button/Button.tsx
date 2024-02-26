@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
+import React from "react";
 import "./button.css"
 
 
@@ -6,7 +7,7 @@ interface ButtonProps {
   /**
    * Is this the principal call to action on the page?
    */
-  type:"primary"|"secondary"|"danger"|"sucess";
+  type:"primary"|"secondary"|"danger"|"success";
   /**
    * What background color to use
    */
@@ -20,8 +21,10 @@ interface ButtonProps {
    */
   label: string;
 
+  disabled:boolean;
 
- disabled:boolean;
+
+
   /**
    * Optional click handler
    */
@@ -36,11 +39,12 @@ export const Button = ({
   size = 'medium',
   backgroundColor,
   label,
+
   
   ...props
 }: ButtonProps) => {
   
-  const mode = type=="primary" ? 'primary' :type=="secondary" ? 'secondary':type=="danger" ?"danger":"sucess";
+  const mode = type=="primary" ? 'primary' :type=="secondary" ? 'secondary':type=="danger" ?"danger":"success";
   return (
     <button
       type="button"
