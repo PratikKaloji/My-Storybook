@@ -23,15 +23,11 @@ interface Props$1 {
     required: boolean;
     /**used for adding custom placeholders to the inputs  */
     placeholder: string;
-    variant: "default" | "input1" | "success" | "warning" | "error" | "disabled";
+    variant: "default" | "input1" | "success" | "warning" | "error";
     size: "sm" | "md" | "lg";
     disabled: boolean;
     Text: [];
-    error: boolean;
-    success: boolean;
-    warning: boolean;
     optional: boolean;
-    rightAligned: boolean;
     name: string;
     type: string;
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -51,7 +47,7 @@ interface ButtonProps {
     /**
      * Is this the principal call to action on the page?
      */
-    primary?: boolean;
+    type: "primary" | "secondary" | "danger" | "success";
     /**
      * What background color to use
      */
@@ -60,10 +56,11 @@ interface ButtonProps {
      * How large should the button be?
      */
     size?: 'small' | 'medium' | 'large';
-    /**
+    /**k
      * Button contents
      */
     label: string;
+    disabled: boolean;
     /**
      * Optional click handler
      */
@@ -72,7 +69,7 @@ interface ButtonProps {
 /**
  * Primary UI component for user interaction
  */
-declare const Button: ({ primary, size, backgroundColor, label, ...props }: ButtonProps) => React.JSX.Element;
+declare const Button: ({ type, size, backgroundColor, label, ...props }: ButtonProps) => React.JSX.Element;
 
 declare const Page: React.FC;
 

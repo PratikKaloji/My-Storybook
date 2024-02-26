@@ -8,15 +8,11 @@ export interface Props {
     required: boolean;
     /**used for adding custom placeholders to the inputs  */
     placeholder: string;
-    variant: "default" | "input1" | "success" | "warning" | "error" | "disabled";
+    variant: "default" | "input1" | "success" | "warning" | "error";
     size: "sm" | "md" | "lg";
     disabled: boolean;
     Text: [];
-    error: boolean;
-    success: boolean;
-    warning: boolean;
     optional: boolean;
-    rightAligned: boolean;
     name: string;
     type: string;
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
