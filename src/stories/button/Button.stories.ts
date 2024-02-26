@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from './Button';
@@ -15,6 +16,8 @@ const meta = {
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
     backgroundColor: { control: 'color' },
+    disabled:{control:'boolean'}
+   
   },
 } satisfies Meta<typeof Button>;
 
@@ -24,27 +27,34 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
-    primary: true,
+    type:"primary",
     label: 'Button',
+    disabled:false
   },
 };
 
 export const Secondary: Story = {
   args: {
+    type:"secondary",
     label: 'Button',
+    disabled:false
   },
 };
 
-export const Large: Story = {
+export const Danger: Story = {
   args: {
-    size: 'large',
+    type:"danger",
     label: 'Button',
+    disabled:false
+
   },
 };
 
-export const Small: Story = {
+export const Success: Story = {
   args: {
-    size: 'small',
+    type:"success",
     label: 'Button',
+    disabled:false
   },
 };
+

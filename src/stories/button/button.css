@@ -1,0 +1,92 @@
+/* @import "../../color"; */
+
+.button {
+  width: auto;
+  border-radius: 5px;
+  color: white;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+}
+.primary {
+  color: #434db8;
+  border: 1px solid #434db8;
+}
+.primary:hover {
+  background-color: #434db8;
+  color: white;
+}
+.primary:active {
+  background-color: #434db8;
+  color: rgb(255, 255, 255);
+}
+.primary:disabled {
+  background-color: #434db8;
+  color: rgb(255, 255, 255);
+  opacity: 0.5;
+}
+.secondary {
+  color: #808080;
+  border: 1px solid #808080;
+}
+.secondary:hover {
+  background-color: #808080;
+  color: white;
+}
+.secondary:active {
+  background-color: #808080;
+  color: white;
+}
+.secondary:disabled {
+  background-color: #808080;
+  color: white;
+  opacity: 0.5;
+}
+.danger {
+  color: #c50303;
+  border: 1px solid #c50303;
+}
+.danger:hover {
+  background-color: #c50303;
+  color: white;
+}
+.danger:active {
+  background-color: #c50303;
+  color: white;
+}
+.danger:disabled {
+  background-color: #c50303;
+  color: white;
+  opacity: 0.5;
+}
+.success {
+  color: #5ca700;
+  border: 1px solid #5ca700;
+}
+.success:hover {
+  background-color: #5ca700;
+  color: white;
+}
+.success:active {
+  background-color: #5ca700;
+  color: white;
+}
+.success:disabled {
+  background-color: #5ca700;
+  color: white;
+  opacity: 0.5;
+}
+.small {
+  font-size: 12px;
+  padding: 10px 16px;
+}
+.medium {
+  font-size: 14px;
+  padding: 11px 20px;
+}
+.large {
+  font-size: 16px;
+  padding: 12px 24px;
+}
