@@ -7,8 +7,8 @@ export interface props {
 }
 export const Dropdown = (props:props) => {
   return (
-    <div>
-      <label htmlFor="">{props.label}</label>
+    <div className="dropdowndiv">
+      <label htmlFor="" className="dropdownlabel">{props.label}</label>
       <select name="" id="" >
         <option value=""></option>
         <option value="">sdfgh</option>
