@@ -8,4 +8,3 @@ export declare const Success: Story;
 export declare const Warning: Story;
 export declare const Input1: Story;
 export declare const Error: Story;
-export declare const Disabled: Story;

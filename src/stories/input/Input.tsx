@@ -54,7 +54,7 @@ const condition= props.variant=="default" ? "default": props.variant=="success" 
       <input
       {...props}
         type={props.type}
-        className={[props.variant, props.size,condition].join(" ")}
+        className={[props.variant,props.size,condition].join(" ")}
         placeholder={props.placeholder}
         name={props.name}
        
