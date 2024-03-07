@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import "./Input.css";
+import "./input.scss";
 export interface Props {
     children: ReactNode;
     /** used for adding custom label to the inputs */
