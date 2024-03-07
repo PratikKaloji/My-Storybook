@@ -4,12 +4,11 @@ import { Input } from "./Input";
 const meta: Meta<typeof Input> = {
   component: Input,
   title: "Example/Input",
-  argTypes: {variant:{control:{type:"select"}}},
+  argTypes: { variant: { control: { type: "select" } } },
   tags: ["autodocs"],
   parameters: {
     layout: "centered",
   },
-
 };
 export default meta;
 
@@ -31,6 +30,7 @@ export const Default: Story = {
 export const Success: Story = {
   args: {
     placeholder: "enter text",
+    label: "Label",
     variant: "success",
     Text: [],
     success: true,
@@ -44,8 +44,10 @@ export const Success: Story = {
 export const Warning: Story = {
   args: {
     placeholder: "enter text",
+    label: "Label",
     variant: "warning",
-    Text: [],  warning: true,
+    Text: [],
+    warning: true,
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
       console.log("Input value changed:", event.target.value);
     },
@@ -56,6 +58,7 @@ export const Warning: Story = {
 export const Input1: Story = {
   args: {
     placeholder: "enter text",
+    label: "Label",
     variant: "input1",
     Text: [],
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -68,6 +71,7 @@ export const Input1: Story = {
 export const Error: Story = {
   args: {
     placeholder: "enter text",
+    label: "Label",
     variant: "error",
     Text: [],
     error: true,

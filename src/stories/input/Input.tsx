@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import CheckCircleOutlineRoundedIcon from "@mui/icons-material/CheckCircleOutlineRounded";
-import "./Input.css";
+import "./input.scss";
 import DangerousOutlinedIcon from "@mui/icons-material/DangerousOutlined";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
@@ -12,7 +12,7 @@ export interface Props {
   required: boolean;
   /**used for adding custom placeholders to the inputs  */
   placeholder: string;
-  variant: "default" | "input1" | "success" | "warning" | "error" ;
+  variant: "default" | "input1" | "success" | "warning" | "error";
   size: "sm" | "md" | "lg";
   disabled: boolean;
   Text: [];
@@ -21,21 +21,40 @@ export interface Props {
   // warning: boolean;
   optional: boolean;
   // rightAligned: boolean;
-  name:string
-  type:string
-  
+  name: string;
+  type: string;
+  // type:
+  //   | "text"
+  //   | "password"
+  //   | "date"
+  //   | "datetime-local"
+  //   | "email"
+  //   | "number"
+  //   | "tel"
+  //   | "color"
+  //   | "time"
+  //   | "url"
+  //   | "week";
 
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
-export const Input = (props : Props) => {
-  function disabled(props){
+export const Input = (props: Props) => {
+  function disabled(props) {
     // console.log(props.disabled)
- return (props.disabled===true?"disabled":"")
-}
-// {console.log(props.error)}
+    return props.disabled === true ? "disabled" : "";
+  }
+  // {console.log(props.error)}
 
-
-const condition= props.variant=="default" ? "default": props.variant=="success" ?"success":props.variant=="error"?"error":props.variant=="warning"?"warning":""
+  const condition =
+    props.variant == "default"
+      ? "default"
+      : props.variant == "success"
+      ? "success"
+      : props.variant == "error"
+      ? "error"
+      : props.variant == "warning"
+      ? "warning"
+      : "";
   return (
     <div
       style={{
@@ -50,17 +69,16 @@ const condition= props.variant=="default" ? "default": props.variant=="success" 
         {props.label}
         {props.optional ? <span>(Optional)</span> : <></>}
       </label>
-      
+
       <input
-      {...props}
+        {...props}
         type={props.type}
-        className={[props.variant, props.size,condition].join(" ")}
+        className={[props.variant, props.size, condition].join(" ")}
         placeholder={props.placeholder}
         name={props.name}
-       
       />
-      
-      {condition=="error" ? (
+
+      {condition == "error" ? (
         <div>
           <DangerousOutlinedIcon
             style={{ fontSize: "12px", color: "red", paddingLeft: "8px" }}
@@ -75,7 +93,7 @@ const condition= props.variant=="default" ? "default": props.variant=="success" 
       ) : (
         <></>
       )}
-      {condition=="success" ? (
+      {condition == "success" ? (
         <div>
           <CheckCircleOutlineRoundedIcon
             style={{ fontSize: "12px", color: "#5ca700", paddingLeft: "8px" }}
@@ -90,7 +108,7 @@ const condition= props.variant=="default" ? "default": props.variant=="success" 
       ) : (
         <></>
       )}
-      {condition=="warning" ? (
+      {condition == "warning" ? (
         <span
           className="msg"
           style={{ color: "#ffc600", fontSize: "12px", paddingLeft: "8px" }}
@@ -100,13 +118,14 @@ const condition= props.variant=="default" ? "default": props.variant=="success" 
       ) : (
         <></>
       )}
-      {props.disabled==true ? (
-        <div >
+      {props.disabled == true ? (
+        <div>
           <InfoOutlinedIcon
             style={{ fontSize: "12px", color: "#e0e0e0", paddingLeft: "8px" }}
           />
-          <span className={["msg",disabled(props)].join(" ")}
-            style={{ color: "#e0e0e0", fontSize: "12px", paddingLeft: "8px" }} 
+          <span
+            className={["msg", disabled(props)].join(" ")}
+            style={{ color: "#e0e0e0", fontSize: "12px", paddingLeft: "8px" }}
           >
             {props.Text}
           </span>
