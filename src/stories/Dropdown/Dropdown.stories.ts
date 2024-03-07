@@ -6,7 +6,8 @@ const meta: Meta<typeof Dropdown> = {
   title: "Example/Dropdown",
   parameters:{
     layout:"centered"
-  }
+  },
+  tags:["autodocs"]
 };
 
 export default meta;

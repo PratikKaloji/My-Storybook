@@ -1,6 +1,5 @@
 import React, { ReactNode } from "react";
 import CheckCircleOutlineRoundedIcon from "@mui/icons-material/CheckCircleOutlineRounded";
-// import "./Input.css";
 import "./input.scss";
 import DangerousOutlinedIcon from "@mui/icons-material/DangerousOutlined";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
