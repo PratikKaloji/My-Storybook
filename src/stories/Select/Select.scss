@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 .select-main-div {
   height: 35px;
@@ -10,35 +9,34 @@
 
 .select-inner-div {
   width: 100%;
-    height: 35px;
+  height: 35px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-//   background-color: red;
-//   padding: 8px;
+  background-color: #ffffff;
+  //   padding: 8px;
   border-radius: 6px;
   cursor: pointer;
-  border: 1px solid #E0E0E0;
+  border: 1px solid #e0e0e0;
 
-  span{
+  span {
     transition: 1s;
   }
   &:focus {
     border: 1px solid rgb(128, 128, 207);
   }
-//   &:hover{
-//     border: 1px solid rgb(128, 128, 207);
-//   }
-  &:disabled{
+  //   &:hover{
+  //     border: 1px solid rgb(128, 128, 207);
+  //   }
+  &:disabled {
     border: 1px solid grey;
   }
-  &:active{
+  &:active {
     border: 1px solid rgb(128, 128, 207);
-
   }
 }
-.select-option-group {
+.select-option-main {
   width: 100%;
   max-height: 140px;
   padding-top: 8px;
@@ -47,29 +45,43 @@
   justify-content: start;
   align-items: center;
   flex-direction: column;
-  //   background-color: aqua;
+  background-color: #ffffff;
   margin-top: 5px;
   text-wrap: wrap;
   border-radius: 5px;
   box-shadow: 0px 0px 3px 3px #e7e6e6;
-  overflow-y: auto ;
+  // overflow: auto;
+}
+.select-option-group {
+  max-height: 140px;
+  width: 100%;
+  overflow: auto;
+}
+.select-option-group::-webkit-scrollbar {
+  background-color: rgb(126, 124, 124);
+  width: 4px;
+  margin-left: 5px;
+}
+.select-option-group::-webkit-scrollbar-thumb {
+  background-color: rgb(37, 35, 35);
+  width: 7px;
 }
 
 .select-option {
   list-style: none;
-  //   background-color: pink;
+  background-color: #ffffff;
   width: 100%;
   border: none;
-  height: 35px;
+  height: 35px !important;
   display: flex;
   justify-content: start;
   align-items: center;
   //   padding-left: 8px;
-//   text-wrap: wrap;
+  //   text-wrap: wrap;
   transition: 0.15s;
   color: #8f8e8e;
   position: relative;
-cursor: pointer;
+  cursor: pointer;
   &:hover {
     background-color: #434db8;
     color: #ffffff;
@@ -78,24 +90,57 @@ cursor: pointer;
 
 // CSS for label
 .storybook-select-label {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: #8f8e8e;
+  padding: 5px;
+
+  .storybook-label-span {
     font-size: 12px;
-    color: #8f8e8e;
-    padding: 5px;
-  
-    .storybook-label-span {
-      font-size: 12px;
-      padding-right: 2px;
-  
-      color: red;
-    }
+    padding-right: 2px;
+
+    color: red;
   }
-  .select-disabled{
+}
+.select-disabled {
+  border: 1px solid rgb(128, 128, 128);
+  cursor: default;
+  &:focus {
     border: 1px solid rgb(128, 128, 128);
-    cursor: default;
-    &:focus{
-    border: 1px solid rgb(128, 128, 128);
-    }
-    
   }
+}
+
+// Css for select search input
+
+.select-search-input {
+  width: 90%;
+  height: 35px;
+  border-radius: 8px;
+  border: 1px solid #e0dddd;
+  outline: none;
+  padding-left: 8px;
+}
+.searchIcon-div {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+}
+.select-search-input-div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: inherit;
+  position: relative;
+  padding-bottom: 10px;
+}
+// ::-webkit-scrollbar{
+//   width: 3px;
+//   background-color: grey;
+//   border-radius: 2px;
+// }
+// ::-webkit-scrollbar-thumb{
+//   width: 10px;
+//   background-color: rgb(41, 21, 158);
+// }

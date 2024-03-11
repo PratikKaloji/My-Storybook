@@ -6,3 +6,4 @@ export { Button } from "./stories/button/Button";
 export { Page } from "./stories/Page";
 export { Header } from "./stories/Header";
 export { Loader } from "./stories/Loader";
+export { Select } from "./stories/Select";

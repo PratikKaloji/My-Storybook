@@ -3,6 +3,7 @@ import "./Select.scss";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import GoogleIcon from "@mui/icons-material/Google";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
+import SearchIcon from "@mui/icons-material/Search";
 import { action } from "@storybook/addon-actions";
 import classNames from "classnames";
 
@@ -24,11 +25,13 @@ export interface SelectProps {
   placeholder: string;
   optional: boolean;
   value: string;
+  name: string;
   onChange?: (value: string) => void;
 }
 export const Select = (props: SelectProps) => {
   const [selectIsOpen, SetSelectIsOpen] = useState(false);
-  const [inputValue, setInputValue] = useState("");
+  // const [inputValue, setInputValue] = useState("");
+  const [selectedOption, setSelectedOption] = useState(props.value);
   // console.log(props.value);
   const handleSelectOpen = () => {
     if (!selectIsOpen && props.disabled) {
@@ -56,13 +59,17 @@ export const Select = (props: SelectProps) => {
   const disabled = props.disabled && "select-disabled";
 
   const handleClickOption = (optionValue: string) => {
-    setInputValue(optionValue);
+    // setInputValue(optionValue);
     // props.value=optionValue
+    setSelectedOption(optionValue);
     if (props.onChange) {
       props.onChange(optionValue);
     }
     handleBlur();
   };
+
+  // console.log(props.value, "props value");
+  // console.log(selectedOption, "selected option");
   return (
     <div className="select-main-div">
       <label htmlFor="" className="storybook-select-label">
@@ -81,11 +88,76 @@ export const Select = (props: SelectProps) => {
         // onBlur={handleBlur}
         onFocus={action("onFocus")}
         tabIndex={0}
+        {...props}
       >
-        <span style={{ width: "100%", padding: "8px" }}>{inputValue}</span>
+        <span style={{ width: "100%", padding: "8px" }}>
+          {selectedOption ? selectedOption : props.placeholder}
+        </span>
         {selectIsOpen ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
       </div>
-      {selectIsOpen == true && (
+
+      {/* The below is for Default variant */}
+
+      {selectIsOpen == true ? (
+        <div className="select-option-main">
+          {/* conditional rendreing for search select */}
+          {props.variant == "search select" && (
+            <div className="select-search-input-div">
+              <input
+                type="text"
+                className="select-search-input"
+                placeholder={props.placeholder}
+              />
+              <div className="searchIcon-div">
+                <SearchIcon />
+              </div>
+            </div>
+          )}
+          
+          <div className="select-option-group" >
+            {props.options.map((option) => {
+              return (
+                <li
+                  key={option.value}
+                  className="select-option"
+                  // {props.value=option.value}
+                  onClick={() => {
+                    handleClickOption(option.value);
+                    // console.log(option.value);
+                  }}
+                >
+                  <span
+                    style={{
+                      paddingRight: "8px",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    {props.variant == "with Icon" && (
+                      <span
+                        style={{
+                          paddingLeft: "8px",
+                        }}
+                      >
+                        <GoogleIcon />
+                      </span>
+                    )}
+
+                    <span style={{ paddingLeft: "8px" }}>{option.label}</span>
+                  </span>
+                </li>
+              );
+            })}
+          </div>
+        </div>
+      ) : (
+        <></>
+      )}
+
+      {/* The below is for variant with icons */}
+
+      {/* {props.variant == "with Icon" && selectIsOpen == true ? (
         <div className="select-option-group">
           {props.options.map((option) => {
             return (
@@ -114,7 +186,9 @@ export const Select = (props: SelectProps) => {
             );
           })}
         </div>
-      )}
+      ) : (
+        <></>
+      )} */}
     </div>
   );
 };
